@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&family=Roboto+Slab&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.png');
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+    overflow: overlay;
+}
+
+html {
+    scrollbar-color: red transparent;
+    scrollbar-width: thin;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-family: Raleway;
+}
+
+.brand-title {
+    font-size: max(1.5vw, 22.5px);
+    margin: .5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    font-size: max(1vw, 20px);
+    margin: 0;
+    padding: 0;
+    margin-right: .5rem;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.Header {
+    font-family: Raleway;
+    text-align: center;
+    font-size: 250%;
+    font-size: max(1.5vw, 40px);
+    padding-top: 5%;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.Header-small {
+    font-family: Raleway;
+    text-align: center;
+    font-size: 250%;
+    font-size: max(1.5vw, 40px);
+    padding-top: 5%;
+}
+
+.text {
+    font-family: "Roboto Slab";
+    line-height: 175%;
+    font-size: max(1vw, 22.5px);
+}
+
+#Portret {
+    padding-top: max(2.5vw, 100px);
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+    float: right;
+    font-family: sans-serif;
+}
+
+#Portret-Vasil-Levski {
+    border-radius: 15px;
+    width: 100%;
+}
+
+#VL-presentation {
+    text-align: center;
+    font-family: Neucha;
+    font-size: 250%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: max(2.5vw, 200px);
+}
+
+#B-Header {
+    margin-top: 15vw;
+}
+
+#B-img {
+    text-align: center;
+}
+
+#B-Text {
+    padding-right: 12%;
+    padding-left: 12%;
+    margin-bottom: 5vw;
+    text-align: justify;
+}
+
+#VRO {
+    text-align: center;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+#VRO-text {
+    text-align: justify;
+}
+
+.centered-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+    margin-top: 1.5%;
+    border-radius: 15px;
+}
+
+#Karta, #VR {
+    text-align: center;
+}
+
+#Karta iframe, #VR iframe {
+    width: 55vw;
+    height: 60vh;
+    border-radius: 15px;
+}
+
+#Pedigree {
+    margin-bottom: 5vw;
+    text-align: center;
+}
+
+#Pedigree #p-text {
+    padding-right: 12%;
+    padding-left: 12%;
+    text-align: justify;
+}
+
+#Pedigree img {
+    width: 75vw;
+    max-width: 256px;
+    padding: 5px;
+    transition: 500ms;
+    border-radius: 15px;
+}
+
+#Pedigree img:hover {
+    transform: scale(1.05);
+}
+
+#Monuments {
+    text-align: center;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+#Monuments #monuments-imgs img {
+    width: 75vw;
+    max-width: 256px;
+    padding: 5px;
+    transition: 500ms;
+    border-radius: 15px;
+}
+
+#monuments-imgs {
+    border-radius: 15px;
+}
+
+#Monuments #monuments-imgs img:hover {
+    transform: scale(1.05);
+}
+
+#Pictures {
+    margin: 10px 50px;
+    text-align: center;
+}
+
+#Pictures #gallery-imgs img {
+    width: 75vw;
+    max-width: 256px;
+    padding: 5px;
+    transition: 500ms;
+    border-radius: 15px;
+}
+
+#gallery-imgs {
+    border-radius: 15px;
+}
+
+#Pictures #gallery-imgs img:hover {
+    transform: scale(1.05);
+}
+
+#VL-uchilishte {
+    border-radius: 15px;
+    text-align: center;
+    width: 75vw;
+    max-width: 771px;
+}
+
+#VL-uchilishte-text {
+    font-family: Raleway;
+    font-size: 125%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#V-1 {
+    float: left;
+    margin-right: 2.5%;
+    margin-left: 15vw;
+}
+
+#V-2 {
+    float: right;
+    margin-left: 2.5%;
+    margin-right: 15vw;
+}
+
+.video {
+    border: none;
+    width: max(5vw, 480px);
+    height: max(5vw, 270px);
+    border-radius: 15px;
+    margin-bottom: max(5vw, 17.5px);
+}
+
+#Sources {
+    margin-top: 20vw;
+    margin-bottom: 5vw;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+#links-Sources {
+    text-align: center;
+}
+
+.bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 0.25% 1.75% 0.25% 0.25%;
+    font-family: 'Trebuchet MS';
+    background-color: white;
+    border: 0.15vw solid rgb(105, 105, 105);
+    border-right: none;
+    border-bottom: none;
+    border-radius: 1.25vw 0 0 0;
+    font-size: max(1vw, 17.5px);
+}
+
+a {
+    color: black;
+}
+
+::selection {
+    background-color: rgba(255, 38, 0, 0.5);
+}
+
+body::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 0.25vw;
+}
+
+.link {
+    color: black;
+    transition: 1s;
+}
+
+.link:hover {
+    color: rgb(0, 140, 255);
+}
+
+.Links {
+    padding-top: max(2.5vw, 100px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vw;
+    width: max(10vw, 411px);
+    max-width: 75%;
+}
+
+.LinkImg {
+    border-radius: 2.5%;
+    width: 100%;
+    margin-top: 2.5%;
+    margin-bottom: 10%;
+}
+
+@media only screen and (max-width: 1520px) {
+    #V-1, #V-2 {
+        position: static;
+        top: 50%;
+        left: 50%;
+        float: center;
+        margin-top: 5vw;
+        display: block;
+        width: 30vw;
+        height: 17vw;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    #Portret {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1vw;
+        width: max(35vw, 250px);
+        max-width: 75%;
+        display: block;
+    }
+
+    #VL-presentation {
+        padding-top: max(2.5vw, 100px);
+    }
+
+    body::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: red;
+        border-radius: 2.5px;
+    }
+
+    .topnav {
+        position: static;
+    }
+}
+
+@media only screen and (max-width: 855px) {
+    .Header {
+        padding-top: 7.5%;
+        margin-bottom: -.5%;
+    }
+    
+    #V-1, #V-2 {
+        position: static;
+        top: 50%;
+        left: 50%;
+        float: none;
+        float: none;
+        margin-top: 5vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10vw;
+        display: block;
+        width: 75vw;
+        height: 45vw;
+    }
+    
+    #Sources {
+        margin-top: 5vw;
+    }
+
+    #Karta iframe, #VR iframe {
+        padding-top: 5vw;
+        width: 75vw;
+        height: 50vw;
+        border-radius: 1vw;
+    }
+}

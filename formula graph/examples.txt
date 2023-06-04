@@ -1,0 +1,47 @@
+infinity loop:
+nums[0] = 27;
+
+for(x = 0; x < maxNumbers; x += interval) {
+    if(x < maxNumbers - 1) {
+        if(nums[x]%2*interval == 0) {
+            nums[x + 1] = nums[x]/2;
+        } else {
+            nums[x + 1] = nums[x]*3 + 1;
+        }
+    }
+
+    if(nums[x] == 1) {
+        maxNumbers = x + 1;
+    }
+}
+
+math problem in school:
+nums[x] = x*x - 14*x + 60;
+
+population:
+let nums = [], maxNumbers = 125, interval = 1, dist = 32, startY = windowSizeY - 100, multiplier = 305, rate = 0;
+
+nums[0] = 0.5;
+
+for(x = 0; x < maxNumbers; x += interval) {
+    if(x < maxNumbers - 1) {
+        nums[x + 1] = rate*nums[x]*(1 - nums[x]);
+    }
+}
+
+function update() {
+    for(x = 0; x < maxNumbers; x += interval) {
+        if(x < maxNumbers - 1) {
+            nums[x + 1] = rate*nums[x]*(1 - nums[x]);
+        }
+    }
+
+    if(MoveUp()) {
+        rate += 0.001;
+    } if(MoveDown()) {
+        rate -= 0.001;
+    }
+}
+
+other:
+nums[x] = x*x - 1/2*(x*x - ((1 - x)*(1 - x))/2);

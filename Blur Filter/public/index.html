@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blur Image</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+  <h1>Blur Image</h1>
+  <input type="file" id="imageFile">
+  <div id="sliderContainer">
+    <label for="blurSlider">Blur Quality:</label>
+    <div id="blurSlider"></div>
+  </div>
+  <button id="uploadBtn">Upload</button>
+  <p id="downloadLink"></p>
+  <script>
+    $(function() {
+      // Initialize the blur slider
+      $("#blurSlider").slider({
+        min: 1,
+        max: 20,
+        value: 10
+      });
+
+      // Handle file selection
+      $("#imageFile").on("change", function() {
+        // Reset download link
+        $("#downloadLink").html("");
+
+        // Update blur quality label
+        const blurQuality = $("#blurSlider").slider("value");
+        $("#blurSlider").siblings("label").html(`Blur Quality: ${blurQuality}`);
+      });
+
+      // Handle upload button click
+      $("#uploadBtn").on("click", function() {
+        const file = $("#imageFile")[0].files[0];
+        if (!file) {
+          alert("Please select an image file.");
+          return;
+        }
+
+        // Create form data with file and blur quality
+        const formData = new FormData();
+        formData.append("image", file);
+        formData.append("blurQuality", $("#blurSlider").slider("value"));
+
+        // Send AJAX request to upload image
+        $.ajax({
+          url: "/upload",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            // Update download link
+            const downloadLink = response.downloadLink;
+            $("#downloadLink").html(`<a href="${downloadLink}" download>Download Blurred Image</a>`);
+          },
+          error: function(xhr, status, error) {
+            console.error(error);
+            alert("Failed to upload image. Please try again.");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

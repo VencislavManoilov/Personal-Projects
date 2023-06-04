@@ -1,0 +1,44 @@
+This is how to make particle effect:
+
+ParticleEffect(x, y, sizeX, sizeY, brNewParticles, minVelocityX, minVelocityY, maxVelocityX, maxVelocityY, effect, gravity, color)
+effect is pre-generate special effects: 0 is default, 1 is big bouncing from canvas height and 2 is small bouncing
+
+To make square you just need to whrite this:
+fillRect(x, y, sizeX, sizeY, color); // color needs to be in "", like "red"
+
+Or
+
+strokeRect(x, y, sizeX, sizeY, lineWidth, color);
+
+For circle:
+fillArc(x, y, R, color)
+
+Or
+
+strokeArc(x, y, R, lineWidth, color);
+
+And for text:
+fillText("Text", x, y, fontSize, font, color);
+
+Or
+
+strokeText("Text", x, y, fontSize, font, lineWidth, color);
+
+
+Examples:
+fillRect(100, 100, 50, 50, "red");
+strokeRect(175, 100, 50, 50, 2, "green");
+
+fillArc(250, 100, 25, "hotpink");
+strokeArc(325, 100, 25, 2, "cyan");
+
+fillText("Hello", 400, 100, 50, "Arial", "brown");
+strokeText("Stroke", 525, 100, 50, "Arial", 2, 'blue');
+
+Other functions:
+randomInteger(min, max);
+isItInCircle(centerX, centerY, pointX, pointY, R);
+distance(x1, y1, x2, y2);
+drawLine(startX, startY, endX, endY, lineWidth, color);
+transparent(opacity); // 100 is max(not transparent) and 0 is min(you can't see it)
+// if you want to return transparent to 100 after drawing someting you must whrite function again and set to 100
