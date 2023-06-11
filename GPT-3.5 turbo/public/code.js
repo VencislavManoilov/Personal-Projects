@@ -12,7 +12,7 @@ xhr.onload = () => {
         console.log(JSON.parse(xhr.response).error.message);
 
         if(xhr.status == 500) {
-            document.getElementById("res").innerHTML = "Tapak zabravili neshto";
+            document.getElementById("res").innerHTML = "You need to put a valid api key";
         }
     }
 };

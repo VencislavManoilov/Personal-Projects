@@ -1,15 +1,18 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const app = express();
 const port = 3000;
+
 
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "",
 });
 
 const openai = new OpenAIApi(configuration);
+
 
 app.put("/getRes", async function(req, res) {
     res.status(200);
