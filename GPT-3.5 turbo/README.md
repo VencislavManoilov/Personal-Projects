@@ -1,0 +1,1 @@
+I didn't put my api code because I have to pay for it. You can make one for yourself at openai site and put it here.
