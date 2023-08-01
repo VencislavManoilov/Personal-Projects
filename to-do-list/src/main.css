@@ -1,0 +1,108 @@
+html {
+    background-color: rgb(59, 59, 59);
+    color: white;
+}
+
+div, text, button {
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 300px;
+
+    background-color: rgb(80, 80, 80);
+    border-radius: 1rem;
+
+    inline-size: 300px;
+    overflow-wrap: break-word;
+}
+
+.text {
+    text-align: center;
+}
+
+input[type=text] {
+    width: 200px;
+    height: 2rem;
+    display: inline-block;
+    border-radius: .5rem;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+    border-style: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.todo {
+    margin-top: 5px;
+}
+
+#add {
+    background-color: rgb(0, 138, 0);
+    width: 100px;
+    margin-left: 0;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+}
+
+#add:hover {
+    background-color: rgb(76, 160, 76);
+}
+
+#clear {
+    background-color: rgb(255, 145, 0);
+    margin-left: 0;
+    width: 200px;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+}
+
+#clear:hover {
+    background-color: rgb(255, 187, 97);
+}
+
+#delete {
+    background-color: rgb(255, 0, 0);
+    margin-left: 0;
+    width: 100px;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+}
+
+#delete:hover {
+    background-color: rgb(255, 77, 77);
+}
+
+.button {
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 15px;
+  margin-top: 15px;
+  position: relative;
+  transition: all 250ms;
+}
+
+.button:hover{
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
