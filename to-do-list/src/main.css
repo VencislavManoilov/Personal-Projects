@@ -1,6 +1,6 @@
 html {
-    background-color: rgb(59, 59, 59);
-    color: white;
+    /* background-color: rgb(59, 59, 59); */
+    color: black;
 }
 
 div, text, button {
@@ -17,11 +17,15 @@ div, text, button {
     padding: 10px;
     width: 300px;
 
-    background-color: rgb(80, 80, 80);
+    /* background-color: rgb(80, 80, 80); */
     border-radius: 1rem;
 
     inline-size: 300px;
     overflow-wrap: break-word;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+    backdrop-filter: blur(15px);
 }
 
 .text {
