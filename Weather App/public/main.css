@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap');
+
+html {
+    background: rgb(8,0,136);
+    background: linear-gradient(135deg, rgba(8,0,136,1) 0%, rgba(0,212,255,1) 100%) no-repeat fixed center; 
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.Header {
+    text-align: center;
+    font-size: 75px;
+    font-family: 'Noto Serif TC', serif;
+    margin-top: 0.5vw;
+}
+
+#content {
+    word-wrap: break-word;
+}
