@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 
-<html>
+<html id="html">
     <head>
         <title>Weather App</title>
 
         <link rel="stylesheet" type="text/css" href="main.css" />
     </head>
 
-    <body onload="getWeather()">
-        <p class="Header">Weather</p>
+    <body onload="getLocation()">
+        <div id="content">
+            <div id="place">
+                <div id="city"></div>
+                <div id="country"></div>
+                <div id="region"></div>
+            </div>
 
-        <div id="content"></div>
+            <div id="temp"></div>
+        </div>
 
-        <script src="script.js"></script>
+        <script src="location.js"></script>
+        <script src="weather.js"></script>
     </body>
 </html>
