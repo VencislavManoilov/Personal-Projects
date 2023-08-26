@@ -25,15 +25,13 @@ function place(data) {
 }
 
 function temp(data) {
-    console.log(data);
     let temp = document.getElementById("temp");
 
-    temp.innerHTML = data.temp_c;
+    temp.innerHTML = data.temp_c + '<spam class="ok">°</spam>';
 
     if(data.is_day == 0) {
         document.getElementById("html").style.background = "linear-gradient(148deg, rgba(50,40,204,1) 0%, rgba(0,7,79,1) 100%) no-repeat fixed center";
     } else {
-        console.log("hello")
         document.getElementById("html").style.background = "linear-gradient(135deg, rgb(34, 161, 235) 0%, rgba(0, 87, 145, 0.904) 100%) no-repeat fixed center";
     }
 }
