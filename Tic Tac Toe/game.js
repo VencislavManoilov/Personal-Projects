@@ -1,4 +1,4 @@
-let grid = [], size = 150;
+let grid = [], size = 150, turn = 0;
 
 for(let x = 0; x < 3; x++) {
     grid[x] = [];
@@ -30,4 +30,20 @@ function draw() {
         strokeRect(windowSizeX/2 - size * 1.5, windowSizeY/2 - size/2 + i * size, size * 3, 0, 15, "#303030");
         strokeRect(windowSizeX/2 - size/2 + i * size, windowSizeY/2 - size * 1.5, 0, size * 3, 15, "#303030");
     }
+
+    let showText = "X turn";
+    if(turn == 1) {
+        showText = "O turn";
+    }
+
+    context.textAlign = "center";
+    fillText(showText, windowSizeX/2, 10, 100, "Trebuchet MS", "#303030");
+}
+
+function place() {
+
+}
+
+function end() {
+
 }
