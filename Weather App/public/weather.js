@@ -1,7 +1,12 @@
 const xhr = new XMLHttpRequest();
 
 function getWeather(lat, lng) {
-    xhr.open("GET", "/getWeather?lat=" + lat + "&lng=" + lng);
+
+    if(lat && lng) {
+        xhr.open("GET", "/getWeather?lat=" + lat + "&lng=" + lng);
+    } else {
+        xhr.open("GET", "/getWeather");
+    }
     xhr.send();
     xhr.onload = () => {
         if(xhr.readyState == 4 && xhr.status == 200) {

@@ -21,9 +21,13 @@ app.get("/test", function(req, res) {
 });
 
 app.get("/getWeather", async function(req, res) {
+
+    const { lat, lng } = req.query;
+
     try {
-        const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d89fee9ba391445fbd7224934232208&q=39.46142231929912,-0.3737569623110138&aqi=no");
-        // const response = await fetch("http://api.weatherapi.com/v1/current.json?key=d89fee9ba391445fbd7224934232208&q=" + req.query.lat + "," + req.query.lng + "&aqi=no");
+        const response = (lat && lng && !isNaN(lat) && !isNaN(lng)) ? await fetch("http://api.weatherapi.com/v1/current.json?key=d89fee9ba391445fbd7224934232208&q=" + req.query.lat + "," + req.query.lng + "&aqi=no") :
+        await fetch("http://api.weatherapi.com/v1/current.json?key=d89fee9ba391445fbd7224934232208&q=39.46142231929912,-0.3737569623110138&aqi=no");
+
         const json = await response.json();
         res.status(200).json(json);
     } catch(error) {

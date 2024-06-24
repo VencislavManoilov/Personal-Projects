@@ -13,8 +13,7 @@ function getLocation() {
             },
             // Error callback function
             (error) => {
-                // Handle errors, e.g. user denied location sharing permissions
-                console.error("Error getting user location:", error);
+                getWeather();
             }
         );
     } else {
