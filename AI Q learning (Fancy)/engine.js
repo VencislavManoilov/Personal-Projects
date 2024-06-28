@@ -199,20 +199,7 @@ class Vector2 {
     }
 }
 
-function areColliding(positionA, sizeA, positionB, sizeB) {
-    if (positionB.x <= positionA.x + sizeA.x) {
-        if (positionA.x <= positionB.x + sizeB.x) {
-            if (positionB.y <= positionA.y + sizeA.y) {
-                if (positionA.y <= positionB.y + sizeB.y) {
-                    return 1;
-                }
-            }
-        }
-    }
-    return 0;
-}
-
-function normalAreColliding(Ax, Ay, AsizeX, AsizeY, Bx, By, BsizeX, BsizeY) {
+function areColliding(Ax, Ay, AsizeX, AsizeY, Bx, By, BsizeX, BsizeY) {
     if (Bx <= Ax + AsizeX) {
         if (Ax <= Bx + BsizeX) {
             if (By <= Ay + AsizeY) {
@@ -232,16 +219,7 @@ function areMouseColliding(x, y, width, height) {
     return 0;
 }
 
-function drawImage(myImageObject, position, scale, ange) {
-    context.save();
-    context.translate(position.x + scale.x/2, position.y + scale.y/2);
-    context.rotate(ange * Math.PI/180);
-    context.translate(-position.x - scale.x/2, -position.y - scale.y/2);
-    myImageObject.draw(position.x, position.y, scale.x, scale.y);
-    context.restore();
-}
-
-function normalDrawImage(myImageObject, x, y, xs, ys, angle) {
+function drawImage(myImageObject, x, y, xs, ys, angle) {
     context.save();
     context.translate(x + xs/2, y + ys/2);
     context.rotate(angle*Math.PI/180);
@@ -280,13 +258,13 @@ function askForNum(sentence, minimumNum) {
     return num;
 }
 
-function isItInCircle(position, scale, r) {
-    let distancesquared = (position.x - scale.x) * (position.x - scale.x) + (position.y - scale.y) * (position.y - scale.y);
+function isItInCircle(x, y, sizeX, sizeY, r) {
+    let distancesquared = (x - sizeX) * (x - sizeX) + (y - sizeY) * (y - sizeY);
     return distancesquared <= r * r;
 }
 
-function distance(position, position2) {
-    return Math.sqrt((position.x-position2.x)*(position.x-position2.x) + (position.y-position2.y)*(position.y-position2.y));
+function distance(x1, y1, x2, y2) {
+    return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 }
 
 function randomInteger(min, max) {
@@ -301,57 +279,57 @@ function randomOddInteger(min, max) {
     return Math.random() * (max - min + 1) + min;
 }
 
-function drawLine(startPosition, endPosition, lineWidth, color) {
+function drawLine(x, y, x2, y2, lineWidth, color) {
     context.lineWidth = lineWidth;
     context.strokeStyle = color;
 
     context.beginPath();
-    context.moveTo(startPosition.x, startPosition.y);
-    context.lineTo(endPosition.x, endPosition.y);
+    context.moveTo(x, y);
+    context.lineTo(x2, y2);
     context.stroke();
 }
 
-function fillRect(position, size, color) {
+function fillRect(x, y, sizeX, sizeY, color) {
     context.fillStyle = color;
-    context.fillRect(position.x, position.y, size.x, size.y);
+    context.fillRect(x, y, sizeX, sizeY);
 }
 
-function strokeRect(position, size, lineWidth, color) {
+function strokeRect(x, y, sizeX, sizeY, lineWidth, color) {
     context.strokeStyle = color;
     context.lineWidth = lineWidth;
-    context.strokeRect(position.x, position.y, size.x, size.y);
+    context.strokeRect(x, y, sizeX, sizeY);
 }
 
-function fillArc(position, R, color) {
+function fillArc(x, y, R, color) {
     context.fillStyle = color
     context.beginPath();
-    context.arc(position.x, position.y, R, 0, 2 * Math.PI);
+    context.arc(x, y, R, 0, 2 * Math.PI);
     context.fill();
 }
 
-function strokeArc(position, R, lineWidth, color) {
+function strokeArc(x, y, R, lineWidth, color) {
     context.strokeStyle = color
     context.lineWidth = lineWidth;
     context.beginPath();
-    context.arc(position.x, position.y, R, 0, 2 * Math.PI);
+    context.arc(x, y, R, 0, 2 * Math.PI);
     context.stroke();
 }
 
-function fillText(text, position, size, font, color) {
+function fillText(text, x, y, size, font, color) {
     context.fillStyle = color;
     context.font = size + "px " + font;
-    context.fillText(text, position.x, position.y);
+    context.fillText(text, x, y);
 }
 
-function strokeText(text, position, size, font, lineWidth, color) {
+function strokeText(text, x, y, size, font, lineWidth, color) {
     context.strokeStyle = color;
     context.lineWidth = lineWidth;
     context.font = size + "px " + font;
-    context.strokeText(text, position.x, position.y);
+    context.strokeText(text, x, y);
 }
 
-function clearRect(position, scale) {
-    context.clearRect(position.x, position.y, scale.x, scale.y);
+function clearRect(x, y, sizeX, sizeY) {
+    context.clearRect(x, y, sizeX, sizeY);
 }
 
 function rotate(rotateDegree) {
