@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This are my Personal Projects when I was little</h1>
+    <h2 style="color: red;">Don't waste your time here!!!</h2>
+
+    <div id="folders" style="margin-left: 50px;"></div>
+
+    <script>
+        // Sample folder structure. In a real application, you might fetch this data from an API.
+        const folders = [
+            '3D Think',
+            'AI',
+            'AI Class',
+            'AI Q learning',
+            'Benchmark',
+            'BFC',
+            'Bitcoin',
+            'Bounce',
+            'calcolator',
+            'catch thing',
+            'Cheap algorithm',
+            'Chess',
+            'Circles around orbids draw',
+            'Clicker Game',
+            'Collision thing',
+            'CPS',
+            'draw image with text',
+            'easy money',
+            'fast circle collition',
+            'formula graph',
+            'FPS',
+            'Frequenses',
+            'frikuensy shit',
+            'GCD',
+            'Genetic algorithm draws amogus',
+            'Grandma wallpaper',
+            'Graph',
+            'Gravity guy',
+            'In cyrcle test',
+            'Just Arm',
+            'Kill Billy with gavity',
+            'LCM',
+            'Mandelbrot Set',
+            'Map Makers/Super Mario Bros',
+            'Map Makers/The Legend of Zelda',
+            'Map Makers/Tower defens',
+            'ME',
+            'Metaballs',
+            'Minesweeper',
+            'Minesweeper V2',
+            'mouse controle',
+            'Mouse is enemy',
+            'not cyrcle',
+            'Particle effect',
+            'Pendulum Simulation',
+            'Perlin Noise',
+            'Perlin Noise Draw',
+            'Physics engine',
+            'Ponk for two players',
+            'Prujina',
+            'Prujina V2.0',
+            'Quest game',
+            'Rang Algoritem',
+            'Raycasting',
+            'rendering PIXELS',
+            'Rope',
+            'Runneres',
+            'shooter test',
+            'Smoke',
+            'something with squers',
+            'Space Gravity',
+            'Space Invenders',
+            'Space Race',
+            'Spring Simulation',
+            'Spring Simulation 2',
+            'Super Mario Maker',
+            'Tetris',
+            'The Legend of Zelda',
+            'This can change world',
+            'Tic Tac Toe',
+            'Voronoi',
+            'Voronoi from picture',
+            'Water simulation',
+            'Wave function colition',
+            'игра 1-stairs',
+            'Поцалка'
+        ];
+
+        function checkForStartHtml(folder) {
+            // This is a simulation. Replace with actual API call to check for start.html in folder.
+            return fetch(`/${folder}/start.html`, { method: 'HEAD' })
+                .then(response => response.ok)
+                .catch(() => false);
+        }
+
+        async function listFolders() {
+            const container = document.getElementById('folders');
+            for (const folder of folders) {
+                const hasStartHtml = await checkForStartHtml(folder);
+                if (hasStartHtml) {
+                    const link = document.createElement('a');
+                    link.href = `/${folder}/start.html`;
+                    link.textContent = `${folder}`;
+                    container.appendChild(link);
+                    container.appendChild(document.createElement('br'));
+                }
+            }
+        }
+
+        listFolders();
+    </script>
+</body>
+</html>
